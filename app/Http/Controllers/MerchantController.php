@@ -29,7 +29,7 @@ class MerchantController extends Controller
     public function show(int $id)
     {
         try {
-            $fields = ['id', 'name', 'photo', 'keeper_id'];
+            $fields = ['id', 'name', 'photo', 'keeper_id', 'phone'];
             $merchant = $this->merchantService->getById($id, $fields);
             return response()->json(new MerchantResource($merchant));
         } catch (ModelNotFoundException $e) {
